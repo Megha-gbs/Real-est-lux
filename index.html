@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LuxEstate – Premium real estate services for buying, selling, and renting luxury properties. Discover your dream home today." />
+  <meta name="keywords" content="luxury real estate, premium properties, buy home, sell property, rent luxury, investment" />
+  <meta name="author" content="LuxEstate" />
+  <title>LuxEstate – Premium Real Estate</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header class="header" id="header">
+    <nav class="navbar container" role="navigation" aria-label="Main navigation">
+      <a href="#home" class="nav-logo" aria-label="LuxEstate home">
+        <span class="logo-icon"><i class="fas fa-building"></i></span>
+        <span class="logo-text">Lux<span>Estate</span></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#properties" class="nav-link">Properties</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#agents" class="nav-link">Agents</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-primary btn-sm">Get Started</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home" aria-label="Hero section">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content container">
+      <div class="hero-badge reveal">
+        <i class="fas fa-star"></i> Premium Real Estate
+      </div>
+      <h1 class="hero-title reveal">
+        Find Your <span class="gradient-text">Dream Home</span><br />In The Best Locations
+      </h1>
+      <p class="hero-subtitle reveal">
+        Discover exclusive luxury properties handpicked for discerning buyers.<br />
+        Your perfect home is just one search away.
+      </p>
+      <div class="hero-cta reveal">
+        <a href="#properties" class="btn btn-primary btn-lg">
+          <i class="fas fa-search"></i> Explore Properties
+        </a>
+        <a href="#contact" class="btn btn-outline btn-lg">
+          <i class="fas fa-phone"></i> Contact Us
+        </a>
+      </div>
+
+      <!-- Hero Stats -->
+      <div class="hero-stats reveal">
+        <div class="stat-item">
+          <span class="stat-number" data-target="1200">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Properties</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="850">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Happy Clients</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="98">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">Satisfaction Rate</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Search Bar -->
+    <div class="hero-search-wrapper container reveal">
+      <div class="hero-search-tabs">
+        <button class="search-tab active" data-tab="buy">Buy</button>
+        <button class="search-tab" data-tab="rent">Rent</button>
+        <button class="search-tab" data-tab="sell">Sell</button>
+      </div>
+      <div class="hero-search-box">
+        <div class="search-field">
+          <i class="fas fa-map-marker-alt"></i>
+          <input type="text" placeholder="Enter location, city or neighborhood…" id="heroSearch" aria-label="Search location" />
+        </div>
+        <div class="search-select">
+          <i class="fas fa-home"></i>
+          <select id="heroType" aria-label="Property type">
+            <option value="">Property Type</option>
+            <option value="villa">Villa</option>
+            <option value="apartment">Apartment</option>
+            <option value="penthouse">Penthouse</option>
+            <option value="townhouse">Townhouse</option>
+            <option value="mansion">Mansion</option>
+          </select>
+        </div>
+        <div class="search-select">
+          <i class="fas fa-dollar-sign"></i>
+          <select id="heroPrice" aria-label="Price range">
+            <option value="">Price Range</option>
+            <option value="0-500k">Under $500K</option>
+            <option value="500k-1m">$500K – $1M</option>
+            <option value="1m-2m">$1M – $2M</option>
+            <option value="2m+">$2M+</option>
+          </select>
+        </div>
+        <button class="btn btn-primary search-btn" id="heroSearchBtn" aria-label="Search properties">
+          <i class="fas fa-search"></i> Search
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <div class="scroll-dot"></div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURED PROPERTIES ===================== -->
+  <section class="section properties-section" id="properties" aria-label="Featured Properties">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">Our Listings</div>
+        <h2 class="section-title">Featured <span class="gradient-text">Properties</span></h2>
+        <p class="section-subtitle">Handpicked luxury properties in the most sought-after locations</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters-wrapper reveal" role="search" aria-label="Property filters">
+        <div class="filter-group">
+          <label for="filterLocation" class="filter-label">
+            <i class="fas fa-map-marker-alt"></i> Location
+          </label>
+          <select id="filterLocation" class="filter-select" aria-label="Filter by location">
+            <option value="">All Locations</option>
+            <option value="beverly hills">Beverly Hills</option>
+            <option value="manhattan">Manhattan</option>
+            <option value="miami beach">Miami Beach</option>
+            <option value="malibu">Malibu</option>
+            <option value="aspen">Aspen</option>
+            <option value="hamptons">Hamptons</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterType" class="filter-label">
+            <i class="fas fa-building"></i> Type
+          </label>
+          <select id="filterType" class="filter-select" aria-label="Filter by property type">
+            <option value="">All Types</option>
+            <option value="villa">Villa</option>
+            <option value="apartment">Apartment</option>
+            <option value="penthouse">Penthouse</option>
+            <option value="townhouse">Townhouse</option>
+            <option value="mansion">Mansion</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterPrice" class="filter-label">
+            <i class="fas fa-dollar-sign"></i> Price
+          </label>
+          <select id="filterPrice" class="filter-select" aria-label="Filter by price">
+            <option value="">All Prices</option>
+            <option value="0-500000">Under $500K</option>
+            <option value="500000-1000000">$500K – $1M</option>
+            <option value="1000000-2000000">$1M – $2M</option>
+            <option value="2000000-999999999">$2M+</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterBeds" class="filter-label">
+            <i class="fas fa-bed"></i> Bedrooms
+          </label>
+          <select id="filterBeds" class="filter-select" aria-label="Filter by bedrooms">
+            <option value="">Any Beds</option>
+            <option value="1">1+ Bed</option>
+            <option value="2">2+ Beds</option>
+            <option value="3">3+ Beds</option>
+            <option value="4">4+ Beds</option>
+            <option value="5">5+ Beds</option>
+          </select>
+        </div>
+
+        <button class="btn btn-primary filter-btn" id="applyFilters" aria-label="Apply filters">
+          <i class="fas fa-sliders-h"></i> Filter
+        </button>
+        <button class="btn btn-ghost filter-btn" id="resetFilters" aria-label="Reset filters">
+          <i class="fas fa-times"></i> Reset
+        </button>
+      </div>
+
+      <!-- Property Grid -->
+      <div class="properties-grid" id="propertiesGrid" role="list" aria-live="polite">
+        <!-- Cards injected by JS -->
+      </div>
+
+      <div class="no-results hidden" id="noResults" role="status" aria-live="polite">
+        <i class="fas fa-search"></i>
+        <p>No properties match your filters. Try adjusting your search.</p>
+        <button class="btn btn-primary" id="resetFilters2">Clear Filters</button>
+      </div>
+
+      <div class="section-cta reveal">
+        <a href="#contact" class="btn btn-outline btn-lg">View All Properties <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="section about-section" id="about" aria-label="About LuxEstate">
+    <div class="container about-grid">
+      <div class="about-images reveal">
+        <div class="about-img-main">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Luxury villa exterior" loading="lazy" />
+        </div>
+        <div class="about-img-secondary">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80" alt="Modern interior design" loading="lazy" />
+        </div>
+        <div class="about-badge-float">
+          <i class="fas fa-award"></i>
+          <span>#1 Luxury<br/>Real Estate</span>
+        </div>
+      </div>
+
+      <div class="about-content reveal">
+        <div class="section-badge">About Us</div>
+        <h2 class="section-title">We Make Your <span class="gradient-text">Property Dreams</span> A Reality</h2>
+        <p class="about-text">
+          LuxEstate has been redefining the luxury real estate experience since 2009. With over 15 years of expertise,
+          we've helped more than 850 families find their perfect homes across the most prestigious neighborhoods in the country.
+        </p>
+        <p class="about-text">
+          Our team of seasoned professionals combines deep market knowledge with personalized service to ensure
+          every transaction — whether buying, selling, or investing — exceeds your expectations.
+        </p>
+
+        <div class="about-mission">
+          <div class="mission-item">
+            <div class="mission-icon"><i class="fas fa-bullseye"></i></div>
+            <div>
+              <h4>Our Mission</h4>
+              <p>To connect clients with properties that elevate their lifestyle, backed by unparalleled expertise and integrity.</p>
+            </div>
+          </div>
+          <div class="mission-item">
+            <div class="mission-icon"><i class="fas fa-eye"></i></div>
+            <div>
+              <h4>Our Vision</h4>
+              <p>To be the most trusted name in luxury real estate, setting the standard for excellence and innovation.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-stats">
+          <div class="about-stat">
+            <span class="stat-num" data-target="1200">0</span><span>+</span>
+            <span>Properties Sold</span>
+          </div>
+          <div class="about-stat">
+            <span class="stat-num" data-target="850">0</span><span>+</span>
+            <span>Happy Clients</span>
+          </div>
+          <div class="about-stat">
+            <span class="stat-num" data-target="15">0</span><span>+</span>
+            <span>Years Active</span>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn btn-primary btn-lg">
+          Learn More <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section class="section services-section" id="services" aria-label="Our Services">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">What We Offer</div>
+        <h2 class="section-title">Our Premium <span class="gradient-text">Services</span></h2>
+        <p class="section-subtitle">Comprehensive real estate solutions tailored to your unique needs</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card reveal" tabindex="0">
+          <div class="service-icon">
+            <i class="fas fa-key"></i>
+          </div>
+          <h3>Property Buying</h3>
+          <p>Expert guidance through every step of your home purchase. We identify the perfect property that matches your lifestyle and investment goals.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Market analysis & valuation</li>
+            <li><i class="fas fa-check"></i> Neighborhood insights</li>
+            <li><i class="fas fa-check"></i> Negotiation expertise</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </article>
+
+        <article class="service-card reveal" tabindex="0">
+          <div class="service-icon">
+            <i class="fas fa-tag"></i>
+          </div>
+          <h3>Property Selling</h3>
+          <p>Maximize your property's value with our strategic marketing approach. We attract qualified buyers and secure the best possible price.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Premium photography</li>
+            <li><i class="fas fa-check"></i> Global marketing reach</li>
+            <li><i class="fas fa-check"></i> Fast, smooth transactions</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </article>
+
+        <article class="service-card reveal" tabindex="0">
+          <div class="service-icon">
+            <i class="fas fa-home"></i>
+          </div>
+          <h3>Property Renting</h3>
+          <p>Find the ideal rental property or connect with reliable tenants. Our rental specialists ensure a seamless experience for both parties.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Tenant screening</li>
+            <li><i class="fas fa-check"></i> Lease management</li>
+            <li><i class="fas fa-check"></i> Rental optimization</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </article>
+
+        <article class="service-card reveal" tabindex="0">
+          <div class="service-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Property Management</h3>
+          <p>Full-service property management so you can enjoy passive income stress-free. We handle everything from maintenance to tenant relations.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> 24/7 maintenance support</li>
+            <li><i class="fas fa-check"></i> Financial reporting</li>
+            <li><i class="fas fa-check"></i> Vacancy minimization</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </article>
+
+        <article class="service-card reveal" tabindex="0">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Investment Consultation</h3>
+          <p>Data-driven investment strategies that maximize ROI. Our analysts identify high-growth opportunities in luxury real estate markets.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Portfolio analysis</li>
+            <li><i class="fas fa-check"></i> ROI projections</li>
+            <li><i class="fas fa-check"></i> Market trend reports</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </article>
+
+        <article class="service-card service-card--cta reveal" tabindex="0">
+          <div class="service-cta-content">
+            <i class="fas fa-headset"></i>
+            <h3>Need Custom Advice?</h3>
+            <p>Speak directly with one of our luxury property specialists for personalized consultation.</p>
+            <a href="#contact" class="btn btn-primary">Get Free Consultation</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHY CHOOSE US ===================== -->
+  <section class="section why-section" id="why" aria-label="Why Choose LuxEstate">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">Why LuxEstate</div>
+        <h2 class="section-title">Why Clients <span class="gradient-text">Choose Us</span></h2>
+        <p class="section-subtitle">We deliver more than transactions — we deliver life-changing experiences</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon why-icon--gold">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Trusted & Verified</h3>
+          <p>Every property is thoroughly vetted and verified. You can trust that every listing meets our strict quality standards.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon why-icon--blue">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3>Expert Professionals</h3>
+          <p>Our certified agents have decades of combined experience in luxury real estate markets across the nation.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon why-icon--green">
+            <i class="fas fa-smile"></i>
+          </div>
+          <h3>Client Satisfaction</h3>
+          <p>98% of our clients rate their experience as exceptional. We measure success by the smiles we create.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon why-icon--purple">
+            <i class="fas fa-lock"></i>
+          </div>
+          <h3>Secure Transactions</h3>
+          <p>Industry-leading security protocols and transparent processes protect every aspect of your transaction.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon why-icon--red">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3>Global Network</h3>
+          <p>Access to an exclusive global network of buyers, sellers, and investors for maximum market exposure.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon why-icon--teal">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>24/7 Support</h3>
+          <p>Round-the-clock assistance ensures you're never alone in your real estate journey, day or night.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== AGENTS ===================== -->
+  <section class="section agents-section" id="agents" aria-label="Our Agents">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">Meet the Team</div>
+        <h2 class="section-title">Our Expert <span class="gradient-text">Agents</span></h2>
+        <p class="section-subtitle">Dedicated professionals committed to finding your perfect property</p>
+      </div>
+
+      <div class="agents-grid">
+        <article class="agent-card reveal" tabindex="0">
+          <div class="agent-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&q=80" alt="James Hartford, Senior Agent" loading="lazy" />
+            <div class="agent-social">
+              <a href="#" aria-label="James on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="James on Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="Email James"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+          <div class="agent-info">
+            <h3>James Hartford</h3>
+            <span class="agent-role">Senior Luxury Agent</span>
+            <div class="agent-meta">
+              <span><i class="fas fa-briefcase"></i> 12 Years Exp.</span>
+              <span><i class="fas fa-home"></i> 340 Sales</span>
+            </div>
+            <a href="tel:+12135550101" class="agent-phone"><i class="fas fa-phone"></i> +1 (213) 555-0101</a>
+          </div>
+        </article>
+
+        <article class="agent-card reveal" tabindex="0">
+          <div class="agent-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80" alt="Sophia Chen, Property Specialist" loading="lazy" />
+            <div class="agent-social">
+              <a href="#" aria-label="Sophia on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Sophia on Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="Email Sophia"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+          <div class="agent-info">
+            <h3>Sophia Chen</h3>
+            <span class="agent-role">Property Specialist</span>
+            <div class="agent-meta">
+              <span><i class="fas fa-briefcase"></i> 8 Years Exp.</span>
+              <span><i class="fas fa-home"></i> 215 Sales</span>
+            </div>
+            <a href="tel:+12135550102" class="agent-phone"><i class="fas fa-phone"></i> +1 (213) 555-0102</a>
+          </div>
+        </article>
+
+        <article class="agent-card reveal" tabindex="0">
+          <div class="agent-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" alt="Marcus Williams, Investment Advisor" loading="lazy" />
+            <div class="agent-social">
+              <a href="#" aria-label="Marcus on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Marcus on Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" aria-label="Email Marcus"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+          <div class="agent-info">
+            <h3>Marcus Williams</h3>
+            <span class="agent-role">Investment Advisor</span>
+            <div class="agent-meta">
+              <span><i class="fas fa-briefcase"></i> 15 Years Exp.</span>
+              <span><i class="fas fa-home"></i> 480 Sales</span>
+            </div>
+            <a href="tel:+12135550103" class="agent-phone"><i class="fas fa-phone"></i> +1 (213) 555-0103</a>
+          </div>
+        </article>
+
+        <article class="agent-card reveal" tabindex="0">
+          <div class="agent-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&q=80" alt="Elena Russo, Rental Expert" loading="lazy" />
+            <div class="agent-social">
+              <a href="#" aria-label="Elena on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Elena on Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="Email Elena"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+          <div class="agent-info">
+            <h3>Elena Russo</h3>
+            <span class="agent-role">Rental Expert</span>
+            <div class="agent-meta">
+              <span><i class="fas fa-briefcase"></i> 6 Years Exp.</span>
+              <span><i class="fas fa-home"></i> 160 Rentals</span>
+            </div>
+            <a href="tel:+12135550104" class="agent-phone"><i class="fas fa-phone"></i> +1 (213) 555-0104</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section class="section testimonials-section" id="testimonials" aria-label="Client Testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">Client Reviews</div>
+        <h2 class="section-title">What Our <span class="gradient-text">Clients Say</span></h2>
+        <p class="section-subtitle">Real stories from satisfied homeowners and investors</p>
+      </div>
+
+      <div class="testimonials-slider-wrapper reveal">
+        <div class="testimonials-slider" id="testimonialsSlider" role="region" aria-label="Testimonials carousel" aria-live="polite">
+          <!-- Testimonial cards injected by JS -->
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn slider-prev" id="sliderPrev" aria-label="Previous testimonial">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="slider-dots" id="sliderDots" role="tablist" aria-label="Testimonial navigation"></div>
+          <button class="slider-btn slider-next" id="sliderNext" aria-label="Next testimonial">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERY ===================== -->
+  <section class="section gallery-section" id="gallery" aria-label="Property Gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">Visual Tour</div>
+        <h2 class="section-title">Property <span class="gradient-text">Gallery</span></h2>
+        <p class="section-subtitle">Immerse yourself in our curated collection of luxury spaces</p>
+      </div>
+
+      <div class="gallery-grid reveal" id="galleryGrid" role="list">
+        <!-- Gallery items injected by JS -->
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">
+        <i class="fas fa-times"></i>
+      </button>
+      <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="lightbox-content">
+        <img src="" alt="" id="lightboxImg" />
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+      </div>
+      <button class="lightbox-next" id="lightboxNext" aria-label="Next image">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="section faq-section" id="faq" aria-label="Frequently Asked Questions">
+    <div class="container faq-container">
+      <div class="section-header reveal">
+        <div class="section-badge">FAQ</div>
+        <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+        <p class="section-subtitle">Get answers to the most common questions about our services</p>
+      </div>
+
+      <div class="faq-accordion reveal" id="faqAccordion" role="list">
+        <!-- FAQ items injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section contact-section" id="contact" aria-label="Contact Us">
+    <div class="container contact-grid">
+      <div class="contact-info reveal">
+        <div class="section-badge">Get In Touch</div>
+        <h2 class="section-title">Let's Find Your <span class="gradient-text">Perfect Home</span></h2>
+        <p class="contact-intro">Ready to start your luxury real estate journey? Our expert team is here to guide you every step of the way.</p>
+
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <span class="contact-label">Phone</span>
+              <a href="tel:+12135559999" class="contact-value">+1 (213) 555-9999</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <span class="contact-label">Email</span>
+              <a href="mailto:info@luxestate.com" class="contact-value">info@luxestate.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <span class="contact-label">Office</span>
+              <span class="contact-value">9100 Wilshire Blvd, Suite 500<br/>Beverly Hills, CA 90210</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <span class="contact-label">Office Hours</span>
+              <span class="contact-value">Mon – Fri: 9AM – 7PM<br/>Sat: 10AM – 5PM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map Placeholder -->
+        <div class="map-placeholder" role="img" aria-label="Office location map">
+          <div class="map-inner">
+            <i class="fas fa-map-marked-alt"></i>
+            <p>9100 Wilshire Blvd<br/>Beverly Hills, CA 90210</p>
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <i class="fas fa-directions"></i> Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrapper reveal">
+        <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
+          <h3>Send Us a Message</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" placeholder="John" required autocomplete="given-name" />
+              <span class="form-error" id="firstNameError" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Doe" required autocomplete="family-name" />
+              <span class="form-error" id="lastNameError" role="alert"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email" />
+            <span class="form-error" id="emailError" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 (213) 555-0000" autocomplete="tel" />
+            <span class="form-error" id="phoneError" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="interest">I'm Interested In *</label>
+            <select id="interest" name="interest" required aria-label="Area of interest">
+              <option value="">Select an option</option>
+              <option value="buying">Buying a Property</option>
+              <option value="selling">Selling a Property</option>
+              <option value="renting">Renting a Property</option>
+              <option value="investment">Investment Advice</option>
+              <option value="management">Property Management</option>
+            </select>
+            <span class="form-error" id="interestError" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your property goals…" required></textarea>
+            <span class="form-error" id="messageError" role="alert"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg form-submit" id="formSubmitBtn">
+            <span class="btn-text">Send Message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+          <div class="form-success hidden" id="formSuccess" role="status" aria-live="polite">
+            <i class="fas fa-check-circle"></i>
+            <p>Thank you! Your message has been sent. We'll be in touch shortly.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NEWSLETTER ===================== -->
+  <section class="newsletter-section" aria-label="Newsletter subscription">
+    <div class="container newsletter-inner">
+      <div class="newsletter-text reveal">
+        <h3>Stay Ahead of the Market</h3>
+        <p>Subscribe for exclusive property listings, market insights, and investment tips — delivered to your inbox.</p>
+      </div>
+      <form class="newsletter-form reveal" id="newsletterForm" novalidate aria-label="Newsletter subscription form">
+        <div class="newsletter-input-group">
+          <input type="email" id="newsletterEmail" placeholder="Enter your email address" required aria-label="Email for newsletter" />
+          <button type="submit" class="btn btn-primary" aria-label="Subscribe to newsletter">
+            Subscribe <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+        <span class="newsletter-msg hidden" id="newsletterMsg" role="status" aria-live="polite"></span>
+        <p class="newsletter-note"><i class="fas fa-lock"></i> We respect your privacy. No spam, ever.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="nav-logo footer-logo" aria-label="LuxEstate home">
+          <span class="logo-icon"><i class="fas fa-building"></i></span>
+          <span class="logo-text">Lux<span>Estate</span></span>
+        </a>
+        <p class="footer-desc">Redefining luxury real estate since 2009. Your trust, our commitment.</p>
+        <div class="footer-social" role="list">
+          <a href="#" class="social-icon" aria-label="Facebook" role="listitem"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon" aria-label="Instagram" role="listitem"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon" aria-label="LinkedIn" role="listitem"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon" aria-label="Twitter / X" role="listitem"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="social-icon" aria-label="YouTube" role="listitem"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Quick links">
+        <h4>Quick Links</h4>
+        <ul role="list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#properties">Properties</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#agents">Agents</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav" aria-label="Property types">
+        <h4>Property Types</h4>
+        <ul role="list">
+          <li><a href="#properties">Luxury Villas</a></li>
+          <li><a href="#properties">Penthouses</a></li>
+          <li><a href="#properties">Apartments</a></li>
+          <li><a href="#properties">Townhouses</a></li>
+          <li><a href="#properties">Mansions</a></li>
+          <li><a href="#properties">Waterfront Homes</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <h4>Contact Info</h4>
+        <ul role="list">
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>9100 Wilshire Blvd, Suite 500<br/>Beverly Hills, CA 90210</span>
+          </li>
+          <li>
+            <i class="fas fa-phone"></i>
+            <a href="tel:+12135559999">+1 (213) 555-9999</a>
+          </li>
+          <li>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:info@luxestate.com">info@luxestate.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; <span id="currentYear"></span> LuxEstate. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== BACK TO TOP ===================== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Main Script -->
+  <script src="script.js"></script>
+</body>
+</html>
